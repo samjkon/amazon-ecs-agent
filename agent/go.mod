@@ -1,6 +1,6 @@
 module github.com/aws/amazon-ecs-agent/agent
 
-go 1.12
+go 1.13
 
 require (
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
@@ -15,8 +15,8 @@ require (
 	github.com/deniswernert/udev v0.0.0-20140626150257-82fe5be8ca5f
 	github.com/didip/tollbooth v3.0.2+incompatible
 	github.com/docker/distribution v0.0.0-20181002220433-1cb4180b1a5b // indirect
-	github.com/docker/docker v0.0.0-20200531234253-77e06fda0c94
-	github.com/docker/go-connections v0.4.0
+	github.com/docker/docker v20.10.8+incompatible
+	github.com/docker/go-connections v0.3.0
 	github.com/docker/go-units v0.4.0
 	github.com/golang/mock v1.1.1
 	github.com/google/go-cmp v0.5.6 // indirect
@@ -24,10 +24,11 @@ require (
 	github.com/gorilla/websocket v1.4.2
 	github.com/hectane/go-acl v0.0.0-20190604041725-da78bae5fc95
 	github.com/konsorten/go-windows-terminal-sequences v1.0.1 // indirect
+	github.com/moby/sys/mount v0.2.0 // indirect
+	github.com/moby/term v0.0.0-20210619224110-3f7ff695adc6 // indirect
 	github.com/morikuni/aec v1.0.0 // indirect
-	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
-	github.com/opencontainers/image-spec v1.0.2 // indirect
-	github.com/opencontainers/runtime-spec v1.0.2
+	github.com/opencontainers/image-spec v1.0.1
+	github.com/opencontainers/runtime-spec v0.1.2-0.20190507144316-5b71a03e2700
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pborman/uuid v0.0.0-20150603214016-ca53cad383ca
 	github.com/pkg/errors v0.9.1
@@ -38,14 +39,17 @@ require (
 	go.etcd.io/bbolt v1.3.6
 	golang.org/x/net v0.0.0-20210525063256-abc453219eb5
 	golang.org/x/sys v0.0.0-20210510120138-977fb7262007
+	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
+	golang.org/x/sys v0.0.0-20210616094352-59db8d763f22
 	golang.org/x/text v0.3.6 // indirect
-	golang.org/x/time v0.0.0-20170927054726-6dc17368e09b // indirect
-	golang.org/x/tools v0.1.5
+	golang.org/x/tools v0.0.0-20190624222133-a101b041ded4
 	google.golang.org/grpc v1.38.0 // indirect
-	gotest.tools v2.2.0+incompatible // indirect
+	gotest.tools/v3 v3.0.3 // indirect
 )
 
 replace (
+	github.com/Microsoft/go-winio => github.com/Microsoft/go-winio v0.4.7
+	github.com/Microsoft/hcsshim => github.com/Microsoft/hcsshim v0.8.7
 	// Note: the following packages are downgraded explicitly to match the version we were using when we used dep, so that
 	// dependency change is not coupled with migration to go mod. No other reason to keep them downgraded (if in the
 	// future we need to downgrade dependency due to other reason, such as incompatibility with newer version, those
